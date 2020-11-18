@@ -1,0 +1,61 @@
+<section class="container">
+    <h1 class="title">My phone book!</h1>
+    <div class="inputTask">
+        <input type="text" id="inputTask__input" [placeholder]="searchPlaceholder" class="inputTask__input"
+            [(ngModel)]="search" name="search" (ngModelChange)="onInputChange()">
+        <label for="inputTask__input"><img class="imgClose imgPosition" *ngIf="show" src="../../assets/images/cross.svg"
+                (click)="wipe()" alt="close"></label>
+        <button class="inputTask__button" (click)="addPhone()">Add phone</button>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col" class="style" (click)="sortBy('firstName')">First name
+                    <img *ngIf="OnImg" class="triangleImg" src="assets/images/turn-down.svg" alt="down">
+                    <img *ngIf="OfImg" class="triangleImg" src="assets/images/triangle-up.svg" alt="down">
+                </th>
+                <th scope="col" class="style" (click)="sortBy('secondName')">Last name
+                    <img *ngIf="secondOnImg" class="triangleImg" src="assets/images/turn-down.svg" alt="down">
+                    <img *ngIf="secondOffImg" class="triangleImg" src="assets/images/triangle-up.svg" alt="down">
+                </th>
+                <th scope="col" class="style" (click)="sortBy('numberPhone')">Number
+                    <img *ngIf="numberOnImg" class="triangleImg" src="assets/images/turn-down.svg" alt="down">
+                    <img *ngIf="numberOffImg" class="triangleImg" src="assets/images/triangle-up.svg" alt="down">
+                </th>
+                <th scope="col" class="select">edit</th>
+                <th scope="col" class="select">delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of (users | search:search | sort:sortingColumn:isDesc); index as i">
+                <th class="select">{{ user.firstName }}</th>
+                <th class="select">{{ user.secondName }}</th>
+                <th class="select">{{ user.numberPhone }}</th>
+                <th class="select"><button class="edit" (click)="editUser(i)">edit</button></th>
+                <th class="select"><button class="delete" (click)="deleteUser(i)">delete</button></th>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="modal" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <div class="popup__content--title">
+                    <h4>Add phone</h4>
+                    <img (click)="addPhone()" class="imgClose" src="assets/images/close.png" alt="close">
+                </div>
+                <div class="popup__content--input">
+                    <input [placeholder]="firstNamePlaceholder" [(ngModel)]="firstName" name="firstName"
+                        class="popup__input" type="text">
+                    <input [placeholder]="secondNamePlaceholder" [(ngModel)]="secondName" name="secondName"
+                        class="popup__input" type="text">
+                    <input [placeholder]="numberPhonePlaceholder" [(ngModel)]="numberPhone" name="numberPhone"
+                        class="popup__input" type="text">
+                </div>
+                <div class="popup__content--button">
+                    <button *ngIf="IsCheack" class="save" (click)="saveUser()">Save</button>
+                    <button *ngIf="!IsCheack" class="save" (click)="saveEditUser()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

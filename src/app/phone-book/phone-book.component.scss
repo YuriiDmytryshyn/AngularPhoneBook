@@ -1,0 +1,196 @@
+.container {
+    width: 80%;
+    margin: 0px auto;
+}
+
+.title {
+    user-select: none;
+    margin: 10px 0px;
+    color: brown;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.style{
+    cursor: pointer;
+    user-select: none;
+}
+
+.select{
+    user-select: none;
+}
+
+.inputTask {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+}
+
+.inputTask__input {
+    cursor: pointer;
+    position: relative;
+    padding-left: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    height: 35px;
+    outline: none;
+    border: 2px solid rgba($color: #000000, $alpha: 0.5);
+    border-radius: 4px;
+    &:focus {
+        border: 2px solid rgba($color: rgb(173, 216, 230), $alpha: 0.5);
+        box-shadow: 0px 0px 1px 1px rgb(173, 216, 230);
+    }
+}
+
+.inputTask__button {
+    user-select: none;
+    cursor: pointer;
+    margin-top: 10px;
+    outline: none;
+    width: 17%;
+    height: 35px;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 4px;
+    color: white;
+    &:hover {
+        background-color: darkgreen;
+    }
+    &:active {
+        box-shadow: 0px 0px 1px 1px green;
+    }
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    top: 0;
+    left: 0;
+}
+.popup__body {
+    height: 265px;
+    width: 350px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 120px auto;
+}
+
+.popup__content--title {
+    user-select: none;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.3);
+}
+
+.imgClose {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    &:hover {
+        height: 15px;
+        width: 15px;
+    }
+}
+.popup__content--input {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 150px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.popup__content--button {
+    user-select: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: 1px solid rgba($color: #000000, $alpha: 0.3);
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.popup__input {
+    cursor: pointer;
+    padding-left: 3px;
+    outline: none;
+    border: 2px solid rgba($color: #000000, $alpha: 0.5);
+    border-radius: 4px;
+    &:focus {
+        border: 2px solid rgba($color: rgb(173, 216, 230), $alpha: 0.5);
+        box-shadow: 0px 0px 1px 1px rgb(173, 216, 230);
+    }
+}
+.save {
+    cursor: pointer;
+    margin-top: 10px;
+    height: 30px;
+    width: 55px;
+    outline: none;
+    background-color: royalblue;
+    color: white;
+    border: 1px solid royalblue;
+    border-radius: 3px;
+    &:active {
+        box-shadow: 0px 0px 1px 1px royalblue;
+    }
+    &:hover {
+        background-color: rgb(0, 44, 175);
+    }
+}
+
+.edit {
+    cursor: pointer;
+    outline: none;
+    height: 30px;
+    width: 50px;
+    background-color: orange;
+    border: 1px solid orange;
+    border-radius: 4px;
+    &:hover {
+        background-color: rgb(193, 125, 0);
+        border: 1px solid rgb(193, 125, 0);
+    }
+    &:active {
+        box-shadow: 0px 0px 1px 1px rgb(193, 125, 0);
+    }
+}
+
+.delete {
+    cursor: pointer;
+    outline: none;
+    height: 30px;
+    width: 60px;
+    color: white;
+    background-color: orangered;
+    border: 1px solid orangered;
+    border-radius: 4px;
+    &:hover {
+        background-color: rgb(177, 47, 0);
+        border: 1px solid rgb(177, 47, 0);
+    }
+    &:active {
+        box-shadow: 0px 0px 1px 1px rgb(177, 47, 0);
+    }
+}
+
+.imgPosition {
+    position: absolute;
+    margin-left: -40px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.triangleImg{
+    height: 10px;
+    width: 10px;
+}
+
